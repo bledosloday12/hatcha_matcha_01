@@ -253,3 +253,54 @@ def type_advantage_py(atk_elem: int, def_elem: int) -> int:
         if atk_elem == b and def_elem == c:
             return 1
         if atk_elem == c and def_elem == a:
+            return 1
+        if def_elem == a and atk_elem == b:
+            return -1
+        if def_elem == b and atk_elem == c:
+            return -1
+        if def_elem == c and atk_elem == a:
+            return -1
+    return 0
+
+
+def main() -> None:
+    lines: list[str] = []
+    L = lines.append
+    L("<!DOCTYPE html>")
+    L('<html lang="en">')
+    L("<head>")
+    L('  <meta charset="utf-8" />')
+    L('  <meta name="viewport" content="width=device-width, initial-scale=1" />')
+    L("  <title>aster_edge — ChickCombo console</title>")
+    L("  <style>")
+    L("    :root {")
+    L("      --bg0:#0c0f14;")
+    L("      --bg1:#121826;")
+    L("      --ink:#e8f0ff;")
+    L("      --muted:#9fb2d7;")
+    L("      --accent:#f7c948;")
+    L("      --fire:#ff7a45;")
+    L("      --aqua:#4cc9f0;")
+    L("      --plant:#8fffba;")
+    L("      --spark:#ffd447;")
+    L("      --frost:#9bd6ff;")
+    L("      --stone:#c7b8ff;")
+    L("      --shadow:#b892ff;")
+    L("      --crystal:#ffe0f7;")
+    L("      --card:#1b2233;")
+    L("      --line:#2a334a;")
+    L("    }")
+    L("    * { box-sizing: border-box; }")
+    L("    body {")
+    L("      margin:0;")
+    L("      font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial;")
+    L("      color: var(--ink);")
+    L("      background: radial-gradient(1200px 800px at 20% 0%, #1a2140 0%, var(--bg0) 55%);")
+    L("      min-height: 100vh;")
+    L("    }")
+    L("    header {")
+    L("      padding: 28px clamp(16px, 4vw, 48px);")
+    L("      border-bottom: 1px solid var(--line);")
+    L("      background: linear-gradient(90deg, rgba(247,201,72,0.12), transparent);")
+    L("    }")
+    L("    header h1 { margin:0 0 8px; font-size: clamp(26px, 4vw, 40px); letter-spacing: 0.04em; }")
