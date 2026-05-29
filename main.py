@@ -202,3 +202,54 @@ ARENA_RULES = [
     "Gate J: receive/fallback reject ETH — users must use donateLeague for value.",
     "Gate K: mint paths are nonReentrant to guard against weird ERC777 reentry (none here).",
     "Gate L: training picks mix SALT_A with prevrandao — casual entropy only.",
+    "Gate M: forage mixes SALT_B with block number surrogate in Python, not on-chain.",
+    "Gate N: evolve checks duplicate evolution via bool flag — cannot re-evolve.",
+    "Gate O: move slots bounded to CC_MOVE_SLOTS — UI should clamp before send.",
+    "Gate P: cooldown errors include timestamps — surface them in wallets.",
+    "Gate Q: type chart is pure function — mirror in multiple clients for consensus.",
+    "Gate R: streak mapping resets on loss — reflect in UI badges.",
+    "Gate S: xp curve divisor 220 matches UI syncLevel — keep constants aligned.",
+    "Gate T: level cap 72 is public constant — display in marketing footers.",
+    "Gate U: species count 49 in this deployment — mint range checks must match.",
+    "Gate V: grain spends on feed divide by three — UI can preview vitality bump.",
+    "Gate V2: CC_LEAGUE_TAG is a fingerprint constant for integrators.",
+    "Gate W: CC_SEASON_ID helps subgraph filters — emit with external metadata.",
+    "Gate X: spar settlement grants xp only to winner — no pity XP on-chain.",
+    "Gate Y: openSpar mapping grows — consider pruning pattern off-chain archival.",
+    "Gate Z: ADDRESS_B/C reserved for future league modules — do not hardwire behavior yet.",
+    "Appendix 1: browser sim uses PRNG; chain uses prevrandao — expect divergence.",
+    "Appendix 2: export CSV quoting uses JSON.stringify on nicknames for commas safety.",
+    "Appendix 3: blitz mode can deselect invalid pairs — always pick fresh bench slots.",
+    "Appendix 4: coaching playbook references species by name — regenerate if catalog shifts.",
+    "Appendix 5: advantage lattice colors are informational — not accessible alone.",
+    "Appendix 6: combine chikn_LIKN digest exports with UI JSON for full snapshots.",
+    "Appendix 7: selftest env flag is dev-only — strip from production automation.",
+    "Appendix 8: move catalog codes align with MOVE_NAMES mapping in JS and Python.",
+    "Appendix 9: training id input uses numeric field — validate parseInt NaN cases.",
+    "Appendix 10: entropy textarea accepts partial hex — mixed with crypto randoms.",
+]
+
+DOUBLES_SYNERGY = [
+    "EmberPeep + TideCaller: classic fire/water flex — bait plants then flip tempo.",
+    "LeafWing + StormCrest: plant + spark covers frost stalls with offensive tempo.",
+    "ShadowCoop + LumenPeep: shadow/crystal shell — punishes mirror greed.",
+    "StoneRoost + ZephyrDown: rock/wind theme — guard anchors speedster pivots.",
+    "FrostBrood + MagmaWattle: frost/fire tension — use as mindgames in blind picks.",
+    "IonPeep + GlacierLayer: spark/frost lane — strong into aqua-heavy ladders.",
+    "QuartzCluck + VoidYolk: crystal/shadow burst — fragile but explosive.",
+    "IronFeather + MarshWarden: steel-plant vibe — outlasts mixed brawlers.",
+    "CoralCaller + BrambleBeak: water/plant sustain — chip teams down slowly.",
+    "SolarFlare + DuskRunner: day/night narrative — element coverage for fun scrims.",
+]
+
+
+def type_advantage_py(atk_elem: int, def_elem: int) -> int:
+    if atk_elem == def_elem:
+        return 0
+    rings = ((1, 3, 2), (4, 2, 5), (6, 4, 7), (8, 7, 1))
+    for a, b, c in rings:
+        if atk_elem == a and def_elem == b:
+            return 1
+        if atk_elem == b and def_elem == c:
+            return 1
+        if atk_elem == c and def_elem == a:
